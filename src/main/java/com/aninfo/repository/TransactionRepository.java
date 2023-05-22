@@ -11,7 +11,4 @@ import java.util.List;
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
 
     List<Transaction> findTransactionsByAccountCbu(Long accountCbu);
-
-    @Transactional
-    void deleteTransactionById(long Id);
 }
