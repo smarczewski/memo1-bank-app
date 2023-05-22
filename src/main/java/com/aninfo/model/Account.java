@@ -3,12 +3,14 @@ package com.aninfo.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "accounts")
 public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cbu;
 
+    @Column(name = "balance")
     private Double balance;
 
     public Account(){
