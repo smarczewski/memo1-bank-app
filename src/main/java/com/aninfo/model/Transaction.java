@@ -14,6 +14,7 @@ public class Transaction {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "account_cbu", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Account account;
 
@@ -27,4 +28,24 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public Long getCbu() {
+        return account.getCbu();
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 }
